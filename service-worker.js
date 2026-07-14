@@ -1,4 +1,4 @@
-const CACHE_NAME = "tasck-local-cache-v56";
+const CACHE_NAME = "tasck-local-cache-v46";
 const urlsToCache = [
   "./",
   "./index.html",
