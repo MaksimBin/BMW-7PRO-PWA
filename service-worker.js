@@ -3,6 +3,7 @@ const urlsToCache = [
   "./",
   "./index.html",
   "./style.css",
+ "bmwSplash.js",
   "./main.js",
   "./manifest.json",
   "./offline.html"
