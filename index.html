@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+<link rel="manifest" href="manifest.json">
+<title>BMW Visualizer — Version5_pro</title>
+<!-- Подключение шрифта (вставь в <head>) -->
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Sora:wght@600;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<button id="fullscreenBtn" aria-label="Полноэкранный режим">⛶</button>
+<input type="file" id="fileInput" accept="audio/*" multiple aria-hidden="true" />
+<button id="loadBtn">Загрузить музыку</button>
+<audio id="audio" style="display:none" preload="metadata"></audio>
+
+<div class="bmw" aria-hidden="true">
+  <span class="b">B</span><span class="m">M</span><span class="w">W</span>
+</div>
+
+<div id="trackName" class="trackName" aria-live="polite"></div>
+<div class="equalizer" id="eq" role="region" aria-label="Аудио визуализатор"></div>
+<span class="sr-only" id="status">Плеер готов</span>
+
+<script src="main.js"></script>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js")
+        .then(() => console.log("Service Worker зарегистрирован"))
+        .catch(err => console.error("Ошибка SW:", err));
+    }
+  </script>
+</body>
+</html>
